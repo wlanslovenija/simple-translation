@@ -6,6 +6,7 @@ from django.conf import settings
 from django.db import router
 from django import forms
 from django.contrib import admin
+from django.core import urlresolvers
 
 from django.contrib.admin.util import unquote, get_deleted_objects, flatten_fieldsets
 
@@ -203,7 +204,7 @@ def make_translation_admin(admin):
                 "deleted_objects": deleted_objects,
                 "perms_lacking": perms_needed,
                 "opts": translationopts,
-                "root_path": self.admin_site.root_path,
+                "root_path": urlresolvers.reverse('admin:index'),
                 "app_label": app_label,
             }
             context.update(extra_context or {})
