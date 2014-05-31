@@ -200,10 +200,10 @@ def make_translation_admin(admin):
             context = {
                 "title": _("Are you sure?"),
                 "object_name": force_unicode(translationopts.verbose_name),
-                "object": translationobj,
+                "object": obj,
                 "deleted_objects": deleted_objects,
                 "perms_lacking": perms_needed,
-                "opts": translationopts,
+                "opts": opts,
                 "root_path": urlresolvers.reverse('admin:index'),
                 "app_label": app_label,
             }
